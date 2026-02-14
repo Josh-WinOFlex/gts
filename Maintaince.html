@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grace Tech Solutions — Under Maintenance</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="Logo.png" type="image/png" />
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --gts-green: #2DA65E;
+      --gts-blue: #1A2E84;
+      --bg-grad: linear-gradient(145deg,#f9fafb,#eef2ff);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',sans-serif;background:var(--bg-grad);color:#071033;display:flex;align-items:center;justify-content:center;padding:16px}
+
+    /* MAIN CARD */
+    .card{
+      width:100%;
+      max-width:1100px;
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 18px 60px rgba(11,22,56,0.08);
+      display:flex;
+      overflow:hidden;
+    }
+    .left{
+      flex:1;
+      padding:44px 40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .right{
+      width:380px;
+      padding:36px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,rgba(26,46,132,0.02),rgba(45,166,94,0.02));
+    }
+
+    /* brand/text */
+    .brand{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+    .logo-wrap{width:78px;height:78px;border-radius:12px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;border:1px solid rgba(26,46,132,0.06)}
+    .brand h1{font-size:18px;color:var(--gts-blue);text-transform:uppercase;letter-spacing:.08em;margin:0;font-weight:700}
+    .tag{font-size:13px;color:#64748b}
+    h2.title{font-family:Merriweather,serif;font-size:32px;margin:10px 0 6px;text-wrap:balance}
+    .desc{color:#475569;line-height:1.7;margin-bottom:12px;font-size:15px;text-wrap:balance}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+    .pill{background:rgba(45,166,94,0.08);color:var(--gts-green);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+    .pill-blue{background:rgba(26,46,132,0.06);color:var(--gts-blue);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+    .btn-mail{background:var(--gts-blue)}
+    .btn-wa{background:linear-gradient(180deg,#25d366,#11b55a)}
+    footer{margin-top:16px;color:#64748b;font-size:13px;text-align:center}
+
+    /* LOGO ANIMATION AREA */
+    .logo-visual { width:220px; height:160px; position:relative; display:flex; align-items:center; justify-content:center; user-select:none; }
+    .logo-svg { position:absolute; width:100%; height:100%; left:0; top:0; }
+    .logo-center { position:absolute; font-family:Merriweather,serif; font-weight:700; font-size:40px; color:var(--gts-blue); pointer-events:none; transform-origin:center; transition:transform .35s cubic-bezier(.2,.9,.3,1); }
+
+    .arc-path { fill:none; stroke:var(--gts-green); stroke-linecap:round; opacity:0.98; filter: drop-shadow(0 0 6px rgba(45,166,94,0.28)); stroke-width:12; stroke-dasharray:520; stroke-dashoffset:0; }
+
+    @keyframes arcMoveTop {
+      0%{stroke-dashoffset:0;}
+      37.5%{stroke-dashoffset:-60;}
+      62.5%{stroke-dashoffset:-600;}
+      100%{stroke-dashoffset:-720;}
+    }
+    @keyframes arcMoveBottom {
+      0%{stroke-dashoffset:0;}
+      37.5%{stroke-dashoffset:60;}
+      62.5%{stroke-dashoffset:600;}
+      100%{stroke-dashoffset:720;}
+    }
+
+    .arc-top { animation: arcMoveTop 8s cubic-bezier(.2,.8,.2,1) infinite; }
+    .arc-bottom { animation: arcMoveBottom 8s cubic-bezier(.2,.8,.2,1) infinite; }
+
+    .shimmer { fill:white; opacity:0.8; filter:blur(5px); pointer-events:none; }
+
+    .logo-pop { animation: logoPop 8s infinite; }
+    @keyframes logoPop {
+      0%{transform:scale(1);}
+      37.5%{transform:scale(1);}
+      40%{transform:scale(1.06);}
+      50%{transform:scale(1.10);}
+      60%{transform:scale(1.04);}
+      62.5%{transform:scale(1.02);}
+      100%{transform:scale(1);}
+    }
+
+    .loader-overlay{position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .45s ease,visibility .45s ease;}
+    .loader-hidden{opacity:0;visibility:hidden;pointer-events:none;}
+
+    /* MOBILE FIXES */
+    @media (max-width:920px){
+      .card{flex-direction:column;align-items:center;text-align:center}
+      .left{padding:24px 20px;width:100%;align-items:center}
+      .brand{justify-content:center}
+      .brand h1{font-size:16px}
+      .tag{font-size:12px}
+      h2.title{font-size:22px;margin-top:10px}
+      .desc{font-size:14px;margin-bottom:10px}
+      .pill,.pill-blue{font-size:12px;padding:6px 10px}
+      .btn{font-size:13px;padding:10px 14px}
+      .right{width:100%;padding:22px}
+      .logo-visual{width:180px;height:130px;margin-top:16px;margin-bottom:10px}
+      .logo-center{font-size:26px}
+      footer{margin-top:12px;padding:0 10px}
+      .note,.contact-info{text-align:center;font-size:13px}
+    }
+
+    @media (max-width:480px){
+      .logo-visual{width:160px;height:120px}
+      h2.title{font-size:20px}
+      .desc{font-size:13px}
+      .btn{font-size:12px;padding:9px 12px}
+    }
+
+    a:focus{outline:3px solid rgba(26,46,132,0.12);outline-offset:3px}
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="page-loader" class="loader-overlay" aria-hidden="false">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div class="logo-visual" id="loader-logo" aria-hidden="true">
+        <svg class="logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path id="arcTopPath" class="arc-path arc-top" d="M40,70 C78,18 162,18 200,70" />
+          <path id="arcBottomPath" class="arc-path arc-bottom" d="M200,95 C162,142 78,142 40,95" />
+          <circle r="6" class="shimmer">
+            <animateMotion dur="8s" repeatCount="indefinite" path="M40,70 C78,18 162,18 200,70" />
+          </circle>
+          <circle r="5" class="shimmer" opacity="0.7">
+            <animateMotion dur="8s" begin="0.4s" repeatCount="indefinite" path="M200,95 C162,142 78,142 40,95" />
+          </circle>
+        </svg>
+        <div class="logo-center logo-pop">GTS</div>
+      </div>
+      <div style="color:#64748b;font-size:14px">Grace Tech Solutions — loading</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="card" role="main" aria-labelledby="page-title">
+    <section class="left" aria-label="site info">
+      <div class="brand">
+        <div class="logo-wrap"><img src="Logo.png" alt="GTS" style="width:68px;height:68px;object-fit:contain"></div>
+        <div>
+          <h1>Grace Tech Solutions</h1>
+          <div class="tag">Authorised Industrial Component Dealer</div>
+        </div>
+      </div>
+
+      <h2 id="page-title" class="title">We'll be back — website under maintenance</h2>
+      <p class="desc">We're applying updates and improvements. The site will be back shortly with new catalogues and improved performance. For urgent orders or quotes, contact us via WhatsApp or email.</p>
+
+      <div class="meta" aria-hidden="true">
+        <div class="pill">Maintenance ongoing</div>
+        <div class="pill-blue">Support: <a href="mailto:gtsgratia@gmail.com" style="color:inherit;text-decoration:underline">gtsgratia@gmail.com</a></div>
+      </div>
+
+      <div class="cta">
+        <a class="btn btn-mail" href="mailto:gtsgratia@gmail.com">📧 Mail Us</a>
+        <a class="btn btn-wa" href="https://wa.me/919865179509" target="_blank">💬 WhatsApp</a>
+      </div>
+
+      <footer>Need the product catalogue? Email us and we'll send the latest PDF & SKU list instantly.</footer>
+    </section>
+
+    <aside class="right" aria-label="brand animation">
+      <div class="logo-visual" id="protected-logo" aria-hidden="true">
+        <svg class="logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path id="arcTopPath2" class="arc-path arc-top" d="M40,70 C78,18 162,18 200,70" />
+          <path id="arcBottomPath2" class="arc-path arc-bottom" d="M200,95 C162,142 78,142 40,95" />
+          <circle r="6" class="shimmer">
+            <animateMotion dur="8s" repeatCount="indefinite" path="M40,70 C78,18 162,18 200,70" />
+          </circle>
+          <circle r="5" class="shimmer" opacity="0.7">
+            <animateMotion dur="8s" begin="0.4s" repeatCount="indefinite" path="M200,95 C162,142 78,142 40,95" />
+          </circle>
+        </svg>
+        <div class="logo-center logo-pop">GTS</div>
+      </div>
+
+      <div class="note">Short downtime — we’ll be back soon. For urgent inquiries, contact us on WhatsApp.</div>
+      <div class="contact-info">📞 +91 98651 79509 • ✉️ gtsgratia@gmail.com</div>
+    </aside>
+  </main>
+
+  <script>
+    (function(){
+      ['protected-logo','loader-logo'].forEach(id=>{
+        const el=document.getElementById(id);
+        if(!el)return;
+        el.addEventListener('contextmenu',e=>e.preventDefault());
+        el.addEventListener('dragstart',e=>e.preventDefault());
+        el.addEventListener('mousedown',e=>{
+          const t=e.target.tagName.toLowerCase();
+          if(t!=='a'&&t!=='button')e.preventDefault();
+        });
+        el.addEventListener('touchstart',e=>{e.preventDefault();},{passive:false});
+      });
+    })();
+
+    (function(){
+      const loader=document.getElementById('page-loader');
+      function hide(){
+        if(!loader)return;
+        loader.classList.add('loader-hidden');
+        setTimeout(()=>loader.remove(),600);
+      }
+      if(document.readyState==='complete'){setTimeout(hide,1100);}
+      else{
+        window.addEventListener('load',()=>setTimeout(hide,900));
+        setTimeout(()=>{if(document.body)hide();},6000);
+      }
+    })();
+
+    (function(){
+      const prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)');
+      if(prefersReduced&&prefersReduced.matches){
+        document.querySelectorAll('.arc-top,.arc-bottom').forEach(p=>p.style.animation='none');
+        document.querySelectorAll('.shimmer').forEach(s=>s.style.display='none');
+        document.querySelectorAll('.logo-center').forEach(l=>l.style.transition='none');
+      }
+    })();
+  </script>
+</body>
+</html>

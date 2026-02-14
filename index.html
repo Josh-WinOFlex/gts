@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grace Tech Solutions (GTS)</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gtsGreen: '#2DA65E',
+                        gtsBlue: '#1A2E84',
+                    },
+                    boxShadow: {
+                        'soft-glow': '0 20px 45px -25px rgba(26, 46, 132, 0.55)',
+                        'card-glass': '0 18px 40px -28px rgba(45, 166, 94, 0.65)',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="loading page-enter font-['Inter',sans-serif] bg-slate-100 text-slate-800" data-show-under-development="true">
+    <div id="scroll-progress" aria-hidden="true"></div>
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center is-active" role="status" aria-label="Loading Grace Tech Solutions">
+        <div class="preloader-wrapper">
+            <div class="preloader-frame">
+                <span class="preloader-spinner" aria-hidden="true"></span>
+                <img src="Logo.png" alt="Grace Tech Solutions logo" class="preloader-logo protected-media" loading="eager" />
+            </div>
+        </div>
+    </div>
+    <div id="under-development-overlay" class="under-development-overlay" role="dialog" aria-modal="true" aria-labelledby="under-development-title" aria-hidden="true">
+        <div class="under-development-card">
+            <p class="under-development-tag">Under Development</p>
+            <h2 id="under-development-title">This section is being polished</h2>
+            <p class="under-development-message">We are finalising this experience. Reach our sourcing desk for assistance or close this notice to continue browsing.</p>
+            <div class="under-development-actions">
+                <a href="mailto:gtsgratia@gmail.com" class="under-development-action under-development-action--primary">Contact Desk</a>
+                <button type="button" class="under-development-action under-development-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-40">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-white/70 px-6 py-4 shadow-soft-glow backdrop-blur-xl transition-all duration-500" id="navbar">
+            <a href="#hero" class="flex items-center gap-3">
+                <div class="logo-badge logo-badge--nav">
+                    <img src="Logo.png" alt="GTS Logo" class="logo-image protected-media" />
+                </div>
+                <div>
+                    <p class="brand-title">Grace Tech Solutions</p>
+                    <p class="brand-subtitle">Industrial Systems Partner</p>
+                </div>
+            </a>
+            <button class="hamburger inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/60 text-gtsBlue shadow-card-glass transition hover:border-gtsGreen hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-gtsGreen/60 md:hidden" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links hidden items-center gap-10 text-sm font-medium uppercase tracking-wide text-gtsBlue md:flex">
+                <a href="index#hero" class="nav-link">Home</a>
+                <a href="index#about" class="nav-link">About</a>
+                <a href="products" class="nav-link">Products</a>
+                <a href="index#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    <div class="mobile-menu pointer-events-none fixed inset-x-0 top-[70px] z-30 mx-auto hidden max-w-6xl rounded-3xl bg-white/80 p-6 text-center text-sm font-semibold uppercase text-gtsBlue shadow-card-glass backdrop-blur-xl md:hidden">
+            <a href="index#hero" class="mobile-link">Home</a>
+            <a href="index#about" class="mobile-link">About</a>
+            <a href="products" class="mobile-link">Products</a>
+            <a href="index#contact" class="mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+        <section id="hero" class="relative flex min-h-screen items-center justify-center px-6 py-32">
+            <div class="hero-gradient" aria-hidden="true"></div>
+            <div class="hero-mesh" aria-hidden="true"></div>
+            <div class="hero-particles" aria-hidden="true"></div>
+            <div class="hero-layout" data-animate="fade-up">
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Authorised Industrial Component Dealer</span>
+                    <h1 class="hero-title gradient-text">Grace Tech Solutions</h1>
+                    <p class="hero-subtitle">We supply essential electrical and automation components that keep factories, utilities, and infrastructure projects running safely and reliably.</p>
+                    <ul class="hero-bullets">
+                        <li>Certified channel for switchgear, safety, and control portfolios</li>
+                        <li>Rapid sourcing of motors, cabling, guarding, and sensing hardware</li>
+                        <li>Application support to align components with industrial standards</li>
+                    </ul>
+                    <div class="hero-cta-group">
+                        <a href="products" class="cta-button">
+                            Explore Products <span class="cta-arrow">→</span>
+                        </a>
+                        <a href="#contact" class="secondary-link">Conatct Us</a>
+                    </div>
+                </div>
+                <aside class="hero-showcase" data-animate="slide-left">
+                    <div class="hero-slideshow" aria-live="polite">
+                        <button type="button" class="hero-slide-control hero-slide-control--prev" aria-label="Previous component">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                <path d="M14.5 5.5 8.5 11.5 14.5 17.5" />
+                            </svg>
+                        </button>
+                        <figure class="hero-slide is-active">
+                            <a href="catalog-switchgears" class="hero-slide-link" aria-label="Explore Switch Gears catalogue">
+                                <img src="assets/hero/switchgears.png" alt="Switch gears assortment" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Switch Gears</span>
+                                    <span class="hero-slide-subtitle">Siemens &amp; Schneider Electric Assemblies</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <figure class="hero-slide">
+                            <a href="catalog-safety-switches" class="hero-slide-link" aria-label="Explore Safety Switches catalogue">
+                                <img src="assets/hero/safetyswitches.png" alt="Safety switches and relays" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Safety Switches</span>
+                                    <span class="hero-slide-subtitle">Euchner Interlocks &amp; Guarding</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <figure class="hero-slide">
+                            <a href="catalog-control-gears" class="hero-slide-link" aria-label="Explore Control Gears catalogue">
+                                <img src="assets/hero/controlgears.png" alt="Control gears and pilot devices" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Control Gears</span>
+                                    <span class="hero-slide-subtitle">Teknic Rotary &amp; Pilot Devices</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <figure class="hero-slide">
+                            <a href="catalog-cable-carriers" class="hero-slide-link" aria-label="Explore Cable Carriers catalogue">
+                                <img src="assets/hero/cablecarriers.png" alt="Cable chain carriers" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Cable Carriers</span>
+                                    <span class="hero-slide-subtitle">Teknic Routing Solutions</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <figure class="hero-slide">
+                            <a href="catalog-plugs-sockets" class="hero-slide-link" aria-label="Explore Plugs and Sockets catalogue">
+                                <img src="assets/hero/plugsockets.png" alt="Industrial plug and sockets" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Plugs &amp; Sockets</span>
+                                    <span class="hero-slide-subtitle">Industrial Connectivity Systems</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <figure class="hero-slide">
+                            <a href="products" class="hero-slide-link" aria-label="Browse Machine Guarding solutions">
+                                <img src="assets/hero/machineguarding.png" alt="Machine guarding panels" class="hero-slide-image protected-media" loading="lazy" />
+                                <figcaption class="hero-slide-caption">
+                                    <span class="hero-slide-title">Machine Guarding</span>
+                                    <span class="hero-slide-subtitle">Troax Warehouse Protection</span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <button type="button" class="hero-slide-control hero-slide-control--next" aria-label="Next component">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                <path d="M9.5 5.5 15.5 11.5 9.5 17.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="hero-slideshow-indicators" role="tablist" aria-label="Featured component categories">
+                        <button type="button" class="hero-slide-dot is-active" data-slide="0" aria-label="Switch Gears"></button>
+                        <button type="button" class="hero-slide-dot" data-slide="1" aria-label="Safety Switches"></button>
+                        <button type="button" class="hero-slide-dot" data-slide="2" aria-label="Control Gears"></button>
+                        <button type="button" class="hero-slide-dot" data-slide="3" aria-label="Cable Carriers"></button>
+                        <button type="button" class="hero-slide-dot" data-slide="4" aria-label="Plugs and Sockets"></button>
+                        <button type="button" class="hero-slide-dot" data-slide="5" aria-label="Machine Guarding"></button>
+                    </div>
+                </aside>
+            </div>
+            <div class="scroll-indicator absolute bottom-12 flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
+                <span>Scroll</span>
+                <span class="arrow"></span>
+            </div>
+        </section>
+
+        <section id="about" class="relative mx-auto max-w-6xl px-6 py-24">
+            <div class="about-bg-shape" aria-hidden="true"></div>
+            <div class="glass-panel grid gap-12 rounded-[32px] bg-white/85 p-10 shadow-card-glass backdrop-blur-2xl md:grid-cols-2" data-animate="fade-up">
+                <div class="flex flex-col gap-7">
+                    <h2 class="section-title">About Grace Tech Solutions</h2>
+                    <p class="body-text">
+                        Grace Tech Solutions (GTS) is an authorised dealer for essential electrical and automation components demanded by Indian industry. We connect production floors with certified switchgear, control gear, cabling, guarding, and monitoring systems from globally trusted OEM partners.
+                    </p>
+                    <p class="body-text">
+                        Our team aligns every delivery with compliance, uptime, and safety targets—pairing genuine parts with knowledgeable application support. From greenfield build-outs to retrofit upgrades, we help plants standardise on dependable components that keep operations online.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <span class="badge" data-animate="fade-up">Authorised Distribution</span>
+                        <span class="badge" data-animate="fade-up">Essential Components</span>
+                        <span class="badge" data-animate="fade-up">Industrial Reliability</span>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center">
+                    <div class="about-proof" data-animate="slide-left">
+                        <span class="about-proof__badge">Assurance Program</span>
+                        <h3 class="about-proof__title">Certified supply for automation upgrades</h3>
+                        <ul class="about-proof__list">
+                            <li>
+                                <span class="about-proof__metric">60+</span>
+                                <span class="about-proof__label">OEM portfolios stocked and serviced</span>
+                            </li>
+                            <li>
+                                <span class="about-proof__metric">48 hr</span>
+                                <span class="about-proof__label">Typical turnaround for panel-critical replacements</span>
+                            </li>
+                            <li>
+                                <span class="about-proof__metric">100%</span>
+                                <span class="about-proof__label">Genuine traceable components with factory warranty</span>
+                            </li>
+                        </ul>
+                        <div class="about-proof__footer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+                                <path d="M12 3 4 7v5c0 5 3.6 9.4 8 10 4.4-.6 8-5 8-10V7l-8-4Z" />
+                                <path d="m9.2 12.2 2 2 3.6-3.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>ISO-aligned logistics desk with on-site application support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="relative bg-white/60 py-24" data-under-development-section="true" data-autoscroll-target="#partners">
+            <div class="mx-auto max-w-6xl px-6">
+                <div class="under-development-section">
+                    <div class="under-development-section__content" aria-hidden="true">
+                        <div class="flex flex-col gap-16">
+                            <div class="mx-auto max-w-2xl text-center">
+                                <h2 class="section-title">Essential Component Catalogue</h2>
+                                <span class="section-underline" aria-hidden="true"></span>
+                                <p class="mt-6 text-base text-slate-600 md:text-lg">Genuine switchgear, safety hardware, cabling, and engineered accessories supplied with manufacturer backing.</p>
+                            </div>
+                            <div class="product-status-panel">
+                                <span class="product-status-tag">Catalogue Refresh</span>
+                                <h3 class="product-status-title">Preview the supply families while we finalise specs</h3>
+                                <p class="product-status-message">Detailed cut sheets, cross references, and pricing matrices are being curated for the digital catalogue. Our sourcing desk can share line cards, alternates, and availability updates on request.</p>
+                                <div class="product-status-actions">
+                                    <a href="mailto:gtsgratia@gmail.com?subject=GTS%20Catalogue%20Request" class="product-status-action product-status-action--primary">Request Line Card</a>
+                                    <a href="#contact" class="product-status-action">Talk to a Specialist</a>
+                                </div>
+                                <ul class="product-status-list" aria-label="Component families available now">
+                                    <li>Switchgear &amp; protection</li>
+                                    <li>Safety automation hardware</li>
+                                    <li>Motors, drives &amp; motion</li>
+                                    <li>Panel hardware &amp; cabling</li>
+                                </ul>
+                            </div>
+                            <div class="product-grid">
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-switchgears" aria-label="Switch Gears catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/switchgears.png" alt="Switch gear assemblies" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Switch Gears</h3>
+                                        <p>Siemens and Schneider Electric breakers, ACBs, and protection systems for mission-critical distribution.</p>
+                                        <span class="product-card__action">Explore Catalogue</span>
+                                    </div>
+                                </a>
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-safety-switches" aria-label="Safety Switches and Relays catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/safetyswitches.png" alt="Safety switches and relays" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Safety Switches &amp; Relays</h3>
+                                        <p>Euchner safety interlocks, light curtains, and emergency systems safeguarding production cells.</p>
+                                        <span class="product-card__action">View Safety Range</span>
+                                    </div>
+                                </a>
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-motors-drives" aria-label="Motors and Drives catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/motors.png" alt="Industrial motors" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Motors &amp; Drives</h3>
+                                        <p>TECO motors, gearboxes, and VFD packages tuned for rugged duty cycles.</p>
+                                        <span class="product-card__action">Discover Drive Packages</span>
+                                    </div>
+                                </a>
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-control-gears" aria-label="Control Gears catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/controlgears.png" alt="Control gears and pilot devices" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Control Gear</h3>
+                                        <p>Teknic pilot devices, rotary switches, and panel accessories supporting intuitive machine control.</p>
+                                        <span class="product-card__action">Browse Control Gear</span>
+                                    </div>
+                                </a>
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-cable-carriers" aria-label="Cable Chain Carriers catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/cablecarriers.png" alt="Cable chain carriers" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Cable Chain Carriers</h3>
+                                        <p>Engineered routing assemblies for dynamic machinery and robotics lines.</p>
+                                        <span class="product-card__action">Plan Routing Sets</span>
+                                    </div>
+                                </a>
+                                <a class="product-card product-card--linked" data-animate="zoom-in" href="catalog-plugs-sockets" aria-label="Plugs and Sockets catalogue">
+                                    <div class="product-card__preview">
+                                        <img src="assets/products/plugsockets.png" alt="Industrial plugs and sockets" class="product-card__image protected-media" loading="lazy" />
+                                    </div>
+                                    <div class="product-card__body">
+                                        <span class="product-card__status">Preview Range</span>
+                                        <h3>Plugs &amp; Sockets</h3>
+                                        <p>Industrial plug, socket, and coupler systems supporting harsh environments.</p>
+                                        <span class="product-card__action">View Connectivity Kits</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <a href="products" class="cta-button">View Complete Catalogue <span class="cta-arrow">→</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="under-development-section__overlay" role="region" aria-labelledby="products-under-dev-title" data-animate="fade-up">
+                        <span class="under-development-section__tag">Under Development</span>
+                        <h3 id="products-under-dev-title">Digital catalogue is rolling out</h3>
+                        <p class="under-development-section__message">Our web team is finalising interactive spec sheets for this catalogue. You can explore partnering OEMs below or reach our sourcing desk for immediate component support.</p>
+                        <div class="under-development-section__actions">
+                            <button type="button" class="under-development-section__button" data-scroll-target="#partners">Skip to OEM Alliances</button>
+                            <a href="mailto:gtsgratia@gmail.com?subject=GTS%20Catalogue%20Assistance" class="under-development-section__button under-development-section__button--secondary">Contact Sourcing Desk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="relative mx-auto max-w-6xl px-6 py-24">
+            <div class="partner-shell" data-animate="fade-up">
+                <div class="partner-header">
+                    <h2 class="section-title">OEM Alliances</h2>
+                    <p class="partner-intro">We supply genuine components through authorised alliances with globally recognised OEMs.</p>
+                </div>
+                <div class="partner-grid" role="list">
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/euchner.png" alt="Euchner logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/troax.png" alt="Troax logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/teknic.png" alt="Teknic logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/TECO.jpg" alt="Teco logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/select.png" alt="Select logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/Siemens.png" alt="Siemens logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/invendis.png" alt="Invendis logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/lapp-india.png" alt="LAPP India logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/Schneider-Electric.png" alt="Schneider Electric logo" class="protected-media" loading="lazy" />
+                    </div>
+                    <div class="partner-item" role="listitem">
+                        <img src="assets/logos/RR_Kabel_Logo.jpg" alt="RR Kabel logo" class="protected-media" loading="lazy" />
+                    </div>
+                </div>
+                <p class="partner-footnote">Consult our sourcing desk for additional authorised component brands.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="relative mx-auto max-w-6xl px-6 py-24">
+            <div class="grid gap-12 md:grid-cols-[1.1fr_1fr]" data-animate="fade-up">
+                <div class="contact-card">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="mt-4 body-text">Ready to accelerate your industrial project? Reach out to our specialists for tailored electrical and automation support.</p>
+                    <ul class="mt-10 space-y-6 text-sm font-medium text-slate-600">
+                        <li class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="contact-icon-svg" fill="none" stroke="currentColor" stroke-width="1.7">
+                                    <path d="M12 21s6-5.373 6-10a6 6 0 1 0-12 0c0 4.627 6 10 6 10Z" />
+                                    <circle cx="12" cy="11" r="2.6" />
+                                </svg>
+                            </span>
+                            <div class="contact-content">
+                                <span class="contact-label">Address</span>
+                                <span class="contact-value">	331, Kamarajar Road, Varadharajapuram, Uppili Palayam, Near Hindu Office, Coimbatore- 641015, Tamil Nadu, India</span>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="contact-icon-svg" fill="none" stroke="currentColor" stroke-width="1.7">
+                                    <path d="M4.2 5.4c0 7.4 6 13.4 13.4 13.4.75 0 1.35-.6 1.35-1.35v-2.25c0-.54-.34-1-0.85-1.2l-2.5-.9a1.25 1.25 0 0 0-1.33.36l-.9 1.02a.9.9 0 0 1-1.08.24 10.7 10.7 0 0 1-5.03-5.03.9.9 0 0 1 .24-1.08l1.02-.9a1.25 1.25 0 0 0 .36-1.33l-.9-2.5a1.25 1.25 0 0 0-1.2-.85H5.55c-.75 0-1.35.6-1.35 1.35Z" />
+                                </svg>
+                            </span>
+                            <div class="contact-content">
+                                <span class="contact-label">Phone</span>
+                                <div class="contact-value contact-value--phones">
+                                    <a href="tel:+919865179509" class="contact-link contact-link--pill">+91 98651 79509</a>
+                                    <a href="tel:+916382779298" class="contact-link contact-link--pill">+91 63827 79298</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="contact-icon-svg" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17V7a1.5 1.5 0 0 1 1.5-1.5Z" />
+                                    <path d="m4 7 8 6 8-6" />
+                                </svg>
+                            </span>
+                            <div class="contact-content">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:gtsgratia@gmail.com" class="contact-link contact-value">gtsgratia@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <form class="contact-form" data-animate="fade-up" action="https://formsubmit.co/contact@gracetechsolutions.in" method="POST" target="_blank">
+                    <input type="hidden" name="_subject" value="Grace Tech Solutions Website Enquiry" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="box" />
+                    <div class="grid gap-5">
+                        <div>
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name" class="form-input" required />
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" name="email" type="email" placeholder="you@example.com" class="form-input" required />
+                        </div>
+                        <div>
+                            <label for="phone" class="form-label">Contact Number</label>
+                            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" class="form-input" inputmode="tel" autocomplete="tel" pattern="[0-9()+\s-]{7,}" required />
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirement" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </div>
+                </form>
+            </div>
+            <div class="location-panel" data-animate="fade-up">
+                <div class="location-panel__content">
+                    <div class="location-panel__intro">
+                        <span class="location-panel__eyebrow">Visit Our Store</span>
+                        <h3 class="location-panel__title">Grace Tech Solutions Store</h3>
+                        <p class="location-panel__text">Plan your visit to review authorised switchgear, safety controls, and cabling solutions firsthand. Our team is on-site to support urgent procurement and retrofit discussions.</p>
+                    </div>
+                    <div class="location-panel__map">
+                        <iframe src="https://www.google.com/maps?q=Grace+Tech+Solutions+Coimbatore&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Grace Tech Solutions on Google Maps"></iframe>
+                    </div>
+                    <div class="location-panel__actions">
+                        <a href="https://maps.app.goo.gl/Az4gVGZ6XyyKD4qq5" class="cta-button cta-button--outline" target="_blank" rel="noopener">Open in Google Maps</a>
+                        <a href="https://wa.me/919865179509" class="secondary-link">WhatsApp Directions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shadow" aria-hidden="true"></div>
+        <div class="footer-shell" data-animate="fade-up">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="Logo.png" alt="Grace Tech Solutions" class="footer-logo-image protected-media" loading="lazy" />
+                        <div>
+                            <p class="footer-brand-title">Grace Tech Solutions</p>
+                            <p class="footer-brand-subtitle">Industrial Systems Partner</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Supplying certified switchgear, safety interfaces, motors, and cabling infrastructure for manufacturing plants across Tamil Nadu. Engage our sourcing desk for compliant upgrades delivered on schedule.</p>
+                    <a href="https://www.indiamart.com/grace-techsolutions/" class="cta-button footer-cta" target="_blank" rel="noopener">Visit Our IndiaMART Store <span class="cta-arrow">→</span></a>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-list">
+                            <li><a href="index#hero" class="footer-link">Home</a></li>
+                            <li><a href="index#about" class="footer-link">About</a></li>
+                            <li><a href="products" class="footer-link">Products</a></li>
+                            <li><a href="index#contact" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Reach Us</h3>
+                        <ul class="footer-list footer-list--contact">
+                            <li><span>331, Kamarajar Road, Varadharajapuram, Uppili Palayam, Near Hindu Office, Coimbatore - 641015</span></li>
+                            <li><a href="tel:+919865179509">+91 98651 79509</a></li>
+                            <li><a href="tel:+916382779298">+91 63827 79298</a></li>
+                            <li><a href="mailto:gtsgratia@gmail.com">gtsgratia@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Business Channels</h3>
+                        <p class="footer-column-text">Connect with us for sourcing, project pricing, and logistics coordination.</p>
+                        <div class="footer-actions">
+                            <a href="https://maps.app.goo.gl/Az4gVGZ6XyyKD4qq5" class="footer-link footer-link--inline" target="_blank" rel="noopener">Google Maps</a>
+                            <a href="https://wa.me/919865179509" class="footer-link footer-link--inline" target="_blank" rel="noopener">WhatsApp Desk</a>
+                            <a href="mailto:gtsgratia@gmail.com" class="footer-link footer-link--inline">Email RFQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="mailto:gtsgratia@gmail.com" class="social-link" aria-label="Email Grace Tech Solutions">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l8 5.2 8-5.2V7H4Zm0 2.5V17h16v-7.5l-7.53 4.9a1 1 0 0 1-1.08 0Z" />
+                        </svg>
+                    </a>
+                    <a href="products#catalogue" class="social-link" aria-label="Product catalogue preview">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M6 3a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H6Zm0 2h12v7.59l-2.3-2.3a1 1 0 0 0-1.4 0l-2.9 2.9-1.9-1.9a1 1 0 0 0-1.4 0L6 14.79V5Zm0 12.41 3.9-3.9 5.1 5.09H6a.99.99 0 0 1-1-.99Zm13 0-3.5-3.5 1.1-1.1L19 16.59V17.4Zm-8.5-7.16a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5Z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/919865179509" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp sourcing desk">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M16.04 2.67C8.82 2.67 2.97 8.52 2.97 15.74c0 2.67.75 4.97 2.2 7.08l-1.45 5.3 5.43-1.42c1.99 1.09 4.17 1.66 6.44 1.66h.01c7.22 0 13.07-5.85 13.07-13.07.01-7.21-5.84-13.07-13.04-13.07zm7.63 18.64c-.32.9-1.86 1.72-2.57 1.83-.66.1-1.51.15-2.45-.15-.57-.18-1.3-.42-2.24-.82-3.94-1.7-6.52-5.66-6.73-5.94-.2-.28-1.61-2.15-1.61-4.1 0-1.94 1.02-2.9 1.39-3.3.36-.4.8-.5 1.06-.5.27 0 .53.01.76.01.24 0 .58-.09.91.69.32.78 1.08 2.7 1.17 2.9.09.2.15.43.03.7-.12.27-.18.43-.36.66-.18.23-.38.51-.54.68-.18.18-.36.37-.16.73.2.37.88 1.45 1.89 2.35 1.3 1.16 2.39 1.53 2.77 1.7.36.15.57.12.78-.07.2-.18.89-1.03 1.13-1.39.24-.36.47-.3.79-.18.32.12 2.05.97 2.4 1.15.36.18.6.27.69.42.09.15.09.88-.23 1.78z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-legal">© 2025 Grace Tech Solutions. All rights reserved. Registered industrial component distributor in Tamil Nadu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919865179509" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="h-7 w-7">
+            <path d="M16.04 2.67C8.82 2.67 2.97 8.52 2.97 15.74c0 2.67.75 4.97 2.2 7.08l-1.45 5.3 5.43-1.42c1.99 1.09 4.17 1.66 6.44 1.66h.01c7.22 0 13.07-5.85 13.07-13.07.01-7.21-5.84-13.07-13.04-13.07zm7.63 18.64c-.32.9-1.86 1.72-2.57 1.83-.66.1-1.51.15-2.45-.15-.57-.18-1.3-.42-2.24-.82-3.94-1.7-6.52-5.66-6.73-5.94-.2-.28-1.61-2.15-1.61-4.1 0-1.94 1.02-2.9 1.39-3.3.36-.4.8-.5 1.06-.5.27 0 .53.01.76.01.24 0 .58-.09.91.69.32.78 1.08 2.7 1.17 2.9.09.2.15.43.03.7-.12.27-.18.43-.36.66-.18.23-.38.51-.54.68-.18.18-.36.37-.16.73.2.37.88 1.45 1.89 2.35 1.3 1.16 2.39 1.53 2.77 1.7.36.15.57.12.78-.07.2-.18.89-1.03 1.13-1.39.24-.36.47-.3.79-.18.32.12 2.05.97 2.4 1.15.36.18.6.27.69.42.09.15.09.88-.23 1.78z" />
+        </svg>
+    </a>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
